@@ -36,7 +36,7 @@ def handle_message(event):
 
     sendText0 = event.message.text + " ??? 蛤竟然敢講這種話，我看是欠星爆哦"
 
-    sendText1 = "星爆...氣流斬"
+    sendText1 = "星爆...氣流斬..."
 
     img_url = "https://media.tenor.com/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif"
     
