@@ -33,7 +33,7 @@ def callback():
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 
-    sendText = "回傳文字：" + event.message.text
+    sendText = "星爆...氣流斬 https://media.tenor.com/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif"
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=sendText))
     return
 
