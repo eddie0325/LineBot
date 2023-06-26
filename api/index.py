@@ -1,7 +1,7 @@
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageMessage
 
 import os
 
@@ -34,17 +34,15 @@ def callback():
 def handle_message(event):
 
 
-    sendText0 = event.message.text + "??? 蛤竟然敢講這種話，我看是欠星爆哦"
-
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=sendText0))
+    sendText0 = event.message.text + " ??? 蛤竟然敢講這種話，我看是欠星爆哦"
 
     sendText1 = "星爆...氣流斬"
+
+    img_url = "https://media.tenor.com/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif"
     
-    line_bot_api.push_message(event.source, TextSendMessage(text=sendText1))
     
-    sendText2 = "https://media.tenor.com/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif"
+    line_bot_api.reply_message(event.reply_token, [TextSendMessage(text=sendText0,text2=sendText1),TextSendMessage(text=img_url)])
     
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=sendText2))
     return
 
 
