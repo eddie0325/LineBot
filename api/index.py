@@ -40,7 +40,7 @@ def handle_message(event):
 
     sendText1 = "星爆...氣流斬"
     
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=sendText1))
+    line_bot_api.push_message(event.source, TextSendMessage(text=sendText1))
     
     sendText2 = "https://media.tenor.com/4Wmrjus9r0MAAAAC/%E6%98%9F%E7%88%86%E6%B0%A3%E6%B5%81%E6%96%AC.gif"
     
